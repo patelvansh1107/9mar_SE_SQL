@@ -1,0 +1,38 @@
+Task - 3
+
+CREATE DATABASE onlineSale
+
+CREATE TABLE salesperson
+(
+	SNo int PRIMARY KEY,
+    SNAME varchar(50),
+    CITY varchar(50),
+    COMM varchar(50)
+    
+)
+
+INSERT INTO `salesperson` (`SNo`, `SNAME`, `CITY`, `COMM`) VALUES ('1001', 'Peel', 'London', '.12'), ('1002', 'serres', 'san jose', '.13'), ('1004', 'motika', 'london', '.11'), ('1007', 'Rafkin', 'Barcrlona', '.15'), ('1003', 'Axelrod', 'New York', '.1');
+
+CREATE TABLE customer
+(
+ 	CNM int PRIMARY KEY,
+    CNAME varchar(50),
+    CITY varchar(50),
+    RATTING int,
+    
+    SNo_fk int,
+    FOREIGN KEY (SNo_fk) REFERENCES salesperson(SNo)
+    
+)
+
+INSERT INTO `customer` (`CNM`, `CNAME`, `CITY`, `RATTING`, `SNo_fk`) VALUES ('201', 'Hoffman', 'London', '100', '1001'), ('202', 'Glovanne', 'Roe', '200', '1003'), ('203', 'Liu', 'San jose', '300', '1002'), ('204', 'Grass', 'Barcrlona', '100', '1002'), ('206', 'Clemens', 'London', '300', '1007'), ('207', 'pereira', 'Roe', '100', '1004');
+
+1) SELECT * FROM order WHERE amt>1000
+
+2) SELECT SNAME,CITY FROM salesperson WHERE COMM>0.12 AND CITY = 'London'
+
+3) SELECT SNAME,CITY FROM salesperson WHERE CITY IN('Barcelona','London')
+
+4) SELECT SNAME,COMM FROM salesperson WHERE COMM>0.10 AND COMM<0.12
+
+5) SELECT CNAME FROM customer WHERE RATTING<=100

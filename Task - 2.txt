@@ -1,0 +1,35 @@
+Task - 2
+
+CREATE DATABASE company
+
+CREATE TABLE employee
+(
+    employee_id int PRIMARY KEY AUTO_INCREMENT,
+	first_name varchar(50),
+    last_name varchar(50),
+    salary int,
+    joining_date varchar(50),
+    department varchar(50)
+    
+)
+
+INSERT INTO `employee` (`employee_id`, `first_name`, `last_name`, `salary`, `joining_date`, `department`) VALUES (NULL, 'john', 'abraham', '1000000', '01-jan-13 12.00.00AM', 'banking'), (NULL, 'micheal', 'clarke', '800000', '01-jan-13 12.00.00AM', 'insurance'), (NULL, 'roy', 'thomas', '700000', '01-jan-13 12.00.00AM', 'banking'), (NULL, 'tom', 'jose', '600000', '01-jan-13 12.00.00AM', 'insurance'), (NULL, 'jerry', 'pinto', '650000', '01-jan-13 12.00.00AM', 'insurance'), (NULL, 'philip', 'mathwe', '750000', '01-jan-13 12.00.00AM', 'service'), (NULL, 'vansh', 'patel', '650000', '01-jan-13 12.00.00AM', 'service'), (NULL, 'yash', 'patel', '600000', '01-jan-13 12.00.00AM', 'insurance');
+
+CREATE TABLE incentive
+(
+	
+    employee_ref_id int,
+    incentive_data varchar(50),
+    incentive_amount varchar(50)
+    
+)
+
+INSERT INTO `incentive` (`employee_ref_id`, `incentive_data`, `incentive_amount`) VALUES ('1', '01-FEB-13', '5000'), ('2', '01-FEB-13', '3000'), ('3', '01-FEB-13', '4000'), ('1', '01-JAN-13', '4500'), ('2', '01-JAN-13', '3500');
+
+1)  SELECT first_name FROM employee
+2)  SELECT first_name,joining_date,salary FROM employee
+3)  SELECT * FROM employee
+    ORDER BY first_name ASC, salary DESC;
+4)  SELECT * FROM employee WHERE first_name LIKE '%j%'
+5)  SELECT department, MAX(salary)FROM employee GROUP BY department
+6)  	
